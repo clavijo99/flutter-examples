@@ -1,3 +1,4 @@
+import 'package:examples/ux/deliveryExample/ux/car-shopping/car_shopping_screen.dart';
 import 'package:examples/ux/deliveryExample/ux/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -27,16 +28,16 @@ class BottomNavigationCustom extends StatelessWidget {
             child: BottonNavigationItem(
               index: 1,
               onTap: () => providerState.setCurrentPage(1),
-              imagen: Image.asset('assets/icons/corazon.png'),
-              imageSelect: Image.asset('assets/icons/corazon-select.png'),
+              imagen: Image.asset('assets/icons/hot-sale.png'),
+              imageSelect: Image.asset('assets/icons/hot-sale-select.png'),
             ),
           ),
           Expanded(
             child: BottonNavigationItem(
               index: 2,
               onTap: () => providerState.setCurrentPage(2),
-              imagen: Image.asset('assets/icons/shopping-bag.png'),
-              imageSelect: Image.asset('assets/icons/shopping-bag-select.png'),
+              imagen: Image.asset('assets/icons/corazon.png'),
+              imageSelect: Image.asset('assets/icons/corazon-select.png'),
             ),
           ),
           Expanded(
@@ -89,12 +90,13 @@ class BottonNavigationItem extends StatelessWidget {
                 left: 5,
                 right: 5,
                 height: 25,
-                child: (providerState.currentNavigationBottom == index)
+                child: /*(providerState.currentNavigationBottom == index)
                     ? Image.asset(
                         'assets/icons/ola.png',
                         width: 25,
                       )
-                    : Container())
+                    :*/
+                    Container())
           ],
         ),
       ),

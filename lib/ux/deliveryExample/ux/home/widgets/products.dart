@@ -1,4 +1,5 @@
 import 'package:examples/ux/deliveryExample/ux/product_details/product_details_screen.dart';
+import 'package:examples/ux/deliveryExample/ux/widgets/product_qualification.dart';
 import 'package:flutter/material.dart';
 import 'package:examples/ux/deliveryExample/data/products.dart';
 
@@ -60,6 +61,8 @@ class Products extends StatelessWidget {
                     )),
                 itemCount: products.length,
                 physics: const BouncingScrollPhysics(),
+                keyboardDismissBehavior:
+                    ScrollViewKeyboardDismissBehavior.onDrag,
               ),
             ),
           )
@@ -94,19 +97,9 @@ class ProductItem extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Row(
+              ProductQualification(
+                calification: product.qualification.toString(),
                 mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  const Icon(
-                    Icons.star_rate_rounded,
-                    color: Colors.yellow,
-                  ),
-                  const SizedBox(width: 2),
-                  Text(
-                    product.qualification.toString(),
-                    style: const TextStyle(color: Colors.grey),
-                  )
-                ],
               ),
               Container(
                 width: 100,
@@ -154,6 +147,9 @@ class ProductItem extends StatelessWidget {
                     )
                   ],
                 ),
+              ),
+              const SizedBox(
+                height: 2,
               ),
             ],
           ),

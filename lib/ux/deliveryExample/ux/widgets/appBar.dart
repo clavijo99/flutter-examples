@@ -11,7 +11,7 @@ class AppBarCustom extends StatelessWidget {
   final String icon1;
   final VoidCallback onTap1;
   final Widget title;
-  final String icon2;
+  final Widget icon2;
   final VoidCallback onTap2;
 
   @override
@@ -59,7 +59,7 @@ class AppBarCustom extends StatelessWidget {
                   ),
                   child: Padding(
                     padding: const EdgeInsets.all(10.0),
-                    child: Image.asset(icon2),
+                    child: icon2,
                   ),
                 ),
               ),
